@@ -81,9 +81,9 @@ html_theme_options = {
             "type": "local",
         },
         {
-            "name": "GitLab",
+            "name": "Github",
             "url": "https://gitlab.inria.fr/soda/medical_embeddings_transfer",
-            "icon": "fa-brands fa-square-gitlab",
+            "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
         },
     ],

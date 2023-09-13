@@ -1,4 +1,4 @@
-# Predictive algorithms from Electronic Health Records -- exploring a complexity gradient
+# Predictive algorithms from Electronic Health Records 
 
 **Documentation**: [https://soda.gitlabpages.inria.fr/medical_embeddings_transfer](https://soda.gitlabpages.inria.fr/medical_embeddings_transfer)
 
