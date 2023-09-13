@@ -1,0 +1,6 @@
+# Ignore all files in this dir...
+*.ipynb
+
+# ... except for this one.
+!.gitignore
+

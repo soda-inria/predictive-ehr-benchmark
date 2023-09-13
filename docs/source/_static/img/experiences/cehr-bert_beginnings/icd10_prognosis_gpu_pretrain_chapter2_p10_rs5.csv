@@ -1,0 +1,2 @@
+n,"prevalence, mean (SD)","precision, mean (SD)","f1-score, mean (SD)","pr_auc, mean (SD)","roc_auc, mean (SD)"
+5,0.1716 (0.0000),0.0000 (0.0000),0.0000 (0.0000),0.2164 (0.0110),0.6135 (0.0182)

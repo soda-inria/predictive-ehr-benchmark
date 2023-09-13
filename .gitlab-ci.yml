@@ -1,0 +1,22 @@
+# The Docker image that will be used to build your app
+image: python:3.8-bullseye
+# Functions that should be executed before the build script is run
+before_script:
+  - pip install -U poetry==1.4.0
+  - poetry install --with docs
+pages:
+  tags:
+    - ci.inria.fr
+    - small
+  script:
+    - make docs-clean
+    - make docs-html
+    - mv docs/_build/html/ public/
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    - changes:
+        - docs/**/*
+        - .gitlab-ci.yml

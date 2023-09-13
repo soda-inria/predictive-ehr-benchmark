@@ -1,0 +1,58 @@
+Caliber,APS,AUROC,Description,Ratio,Chapter Description
+92, 0.066765, 0.723828, "Gastritis and duodenitis", 0.011198, Diseases of the digestive system
+66, 0.108185, 0.797633, "Diaphragmatic hernia", 0.011490, Diseases of the digestive system
+100, 0.118093, 0.742646, "Hearing loss", 0.021964,  Diseases of the ear and mastoid process
+273, 0.132567, 0.773249, "Spondylosis", 0.013459, Diseases of the musculoskeletal system and connective tissue
+189, 0.142594, 0.844596, "Pleural effusion", 0.010229, Diseases of the respiratory system
+172, 0.162186, 0.798654, "Other anaemias", 0.023303, Diseases of the blood and blood forming organs and certain disorders involving the immune mechanism
+29, 0.163355, 0.822707, "Bacterial Diseases (excl TB)", 0.023979, Certain infectious and parasitic diseases
+130, 0.167457, 0.804545, "Iron deficiency anaemia", 0.020780, Diseases of the blood and blood forming organs and certain disorders involving the immune mechanism
+295, 0.169674, 0.836610, "Urinary Tract Infections", 0.022534, Diseases of the genitourinary system
+69, 0.170852, 0.811759, "Diverticular disease of intestine (acute and chronic)", 0.015966, Diseases of the digestive system
+8, 0.177170, 0.810068, "Allergic and chronic rhinitis", 0.023241, Diseases of the respiratory system
+170, 0.181182, 0.847938, "Osteoporosis", 0.013982, Diseases of the musculoskeletal system and connective tissue
+71, 0.184000, 0.790655, Dyslipidaemia, 0.026010, "Endocrine nutritional and metabolic diseases"
+168, 0.184629, 0.799592, "Oesophagitis and oesophageal ulcer", 0.022426, Diseases of the digestive system
+217, 0.203218, 0.855593, Primary Malignancy Other Skin and subcutaneous tissue, 0.012013, Neoplasms
+93, 0.206455, 0.776367, Gastro-oesophageal reflux disease, 0.026271, Diseases of the digestive system
+290, 0.208524, 0.814481, "Type 1 Diabetes Mellitus Type 2 Diabetes Mellitus and Diabetes Mellitus – other or not specified", 0.021226, "Endocrine nutritional and metabolic diseases"
+3, 0.219637, 0.869366, Actinic keratosis, 0.012490, Diseases of the skin and subcutaneous tissue
+131, 0.220017, 0.874319, Irritable bowel syndrome, 0.011182, Diseases of the digestive system
+294, 0.223863, 0.824114, Urinary Incontinence, 0.020057, Diseases of the genitourinary system
+169, 0.234444, 0.785766, Osteoarthritis (excl spine), 0.043714, Diseases of the musculoskeletal system and connective tissue
+176, 0.245906, 0.834062, Other or unspecified infectious organisms, 0.030963, Diseases of the respiratory system
+95, 0.249208, 0.894444, Glaucoma, 0.011367, Diseases of the eye and adnexa
+109, 0.250573, 0.885547, Hyperplasia of prostate, 0.020842, Diseases of the genitourinary system
+184, 0.264687, 0.879325, Peripheral arterial disease, 0.010951, Diseases of the circulatory system
+79, 0.265863, 0.762939, Enthesopathies & synovial disorders, 0.047036, Diseases of the musculoskeletal system and connective tissue
+81, 0.267187, 0.905812, Erectile dysfunction, 0.017873, Mental and behavioural disorders
+140, 0.268504, 0.867094, Lower Respiratory Tract Infections, 0.023518, Certain infectious and parasitic diseases
+63, 0.271027, 0.753816, Dermatitis (atopc/contact/other/unspecified), 0.049051, Diseases of the skin and subcutaneous tissue
+142, 0.292598, 0.893802, Macular degeneration, 0.010752, Diseases of the eye and adnexa
+274, 0.296798, 0.889236, Stable Angina, 0.032039, Diseases of the circulatory system
+57, 0.301041, 0.900088, Coronary heart disease not otherwise specified, 0.035177, Diseases of the circulatory system
+275, 0.307238, 0.911618, Stroke Not otherwise specified (NOS), 0.023395, Diseases of the nervous system
+45, 0.319433, 0.863447, Cataract, 0.042099, Diseases of the eye and adnexa
+1, 0.319972, 0.845171, Abdominal Hernia, 0.019180, Diseases of the digestive system
+44, 0.325143, 0.843480, Carpal tunnel syndrome, 0.012013, Diseases of the nervous system
+101, 0.334902, 0.912117, Heart failure, 0.024918, Diseases of the circulatory system
+164, 0.335131, 0.879670, Obesity, 0.017442, "Endocrine nutritional and metabolic diseases" 
+22, 0.348523, 0.885055, Asthma, 0.026133, Diseases of the respiratory system
+97, 0.349361, 0.882694, Gout, 0.018058, Diseases of the musculoskeletal system and connective tissue
+65, 0.350132, 0.942604, Diabetic ophthalmic complications, 0.018919, "Endocrine nutritional and metabolic diseases"
+147, 0.368465, 0.911541, Migraine, 0.012028, Diseases of the nervous system
+229, 0.398842, 0.904686, Psoriasis, 0.011751, Diseases of the musculoskeletal system and connective tissue
+17, 0.410899, 0.858498, Anxiety disorders, 0.041914, Mental and behavioural disorders
+146, 0.433645, 0.969406, Menorrhagia and polymenorrhoea, 0.015504, Diseases of the genitourinary system
+113, 0.489456, 0.905032, Hypo or hyperthyroidism, 0.047897, "Endocrine nutritional and metabolic diseases"
+302, 0.491672, 0.855823, Vitamin B12 deficiency anaemia, 0.014489, Diseases of the blood and bloodforming organs and certain disorders involving the immune mechanism
+51, 0.501496, 0.923082, Chronic obstructive pulmonary disease (COPD), 0.036869, Diseases of the respiratory system
+23, 0.514881, 0.901268, Atrial Fibrillation and flutter, 0.077629, Diseases of the circulatory system
+110, 0.531597, 0.819527, Hypertension, 0.200618, Diseases of the circulatory system
+61, 0.542223, 0.950442, Dementia, 0.024656, Mental and behavioural disorders
+62, 0.553561, 0.877904, Depression, 0.076876, Mental and behavioural disorders
+85, 0.573880, 0.934049, Female genital prolapse, 0.015781, Diseases of the genitourinary system
+220, 0.575574, 0.964776, Primary Malignancy Prostate, 0.011844, Neoplasms
+6, 0.583305, 0.952656, Alcohol Problems, 0.014535, Mental and behavioural disorders
+194, 0.647243, 0.955062, Polymyalgia Rheumatica, 0.013213, Diseases of the musculoskeletal system and connective tissue
+80, 0.648763, 0.977907, Epilepsy, 0.016104, Diseases of the nervous system

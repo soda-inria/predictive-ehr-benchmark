@@ -1,0 +1,2 @@
+icd10 chapter,target,prevalence,time_stamp,recall,precision,f1-score,pr_auc,roc_auc,brier_score_loss,random_seed,target_label,training_percentage
+Factors influencing health status and contact with health services,21,55.6061468412066,08-18-2023-12-43-16,1.0,0.556061468412066,0.7147037307973665,0.5829263277785609,0.5318091751305671,0.25209206015918134,0,21,0.02

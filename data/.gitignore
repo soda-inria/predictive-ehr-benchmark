@@ -1,0 +1,18 @@
+# Ignore all files in this dir...
+*
+
+# ... except for this one.
+!.gitignore
+!mock_data
+!mock_data/event.csv
+!mock_data/person.csv
+!mock_data/measurement.csv
+!experiences
+!experiences/*
+!experiences/**/*
+experiences/**/*.ipynb_checkpoints/
+!resources
+!resources/*
+!embeddings/
+resources/MRCONSO.RRF
+resources/umls_big_subset.parquet

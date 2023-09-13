@@ -1,0 +1,193 @@
+[tool.poetry]
+name = "medem"
+version = "0.0.0"
+description = "Medical_Embedding_Transfer"
+authors = ["Matthieu Doutreligne <matt.dout@gmail.com>"]
+license = "EUPL-v1.2"
+readme = "README.md"
+repository = "https://gitlab.inria.fr/soda/medical_embeddings_transfer"
+homepage = "https://gitlab.inria.fr/soda/medical_embeddings_transfer"
+include = ["bin"]
+keywords = []
+classifiers = [
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# [tool.poetry.urls]
+# Changelog = "https://gitlab.inria.fr/soda/medical_embeddings_transfer/releases"
+
+[tool.poetry.dependencies]
+python = ">=3.8, <3.11"
+
+# Project-Specific
+click = "^8.0.4"
+
+# Jupyter Notebook
+jupyter = "^1.0.0"
+matplotlib = "^3.5.1"
+jupytext = "^1.13.7"
+python-dotenv = "^0.15.0"
+scikit-learn = "^1.0.0"
+importlib-metadata = "^4.11.3"
+Sphinx = "^4.4.0"
+sphinx-click = "^3.1.0"
+sphinxcontrib-apidoc = "^0.3.0"
+pydata-sphinx-theme = "^0.12.0"
+sphinx-autodoc-typehints = "^1.17.0"
+Pygments = "^2.11.2"
+myst-parser = "^0.17.0"
+seaborn = "^0.12.2"
+tabulate = "^0.9.0"
+openpyxl = "^3.1.2"
+tqdm = "^4.65.0"
+schemdraw = {version="^0.16", python=">=3.8"}
+#eds-scikit = { version = "^0.1.5", optional = true, python = ">=3.7.1, <3.8"}
+loguru = "0.6.0"
+polars = "^0.18.0"
+pyarrow = "^11.0.0"
+tableone = "^0.7.12"
+moepy = "^1.1.4"
+event2vec = ">=0.0.44"
+
+[tool.poetry.dev-dependencies]
+# Testing
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+pytest-mock = "^3.7.0"
+pytest-sugar = "^0.9.4"
+pytest-xdist = "^2.5.0"
+# Linting
+## Type Checking and Data Validation
+mypy = "^0.942" # Static type checker
+## Code formatting
+black = "^22.1.0" # see: https://black.readthedocs.io/en/stable/editor_integration.html
+## Code quality
+isort = "^5.10.1"
+pylint = "^2.13.0"
+## Automation and management
+pre-commit = "^2.17.0"
+
+
+# Documentation
+importlib-metadata = { version = "^4.11.3", optional = true }
+myst-parser = { version = "^0.17.0", optional = true }
+pygments = { version = "^2.11.2", optional = true }
+sphinx = { version = "^4.4.0", optional = true }
+sphinx-autodoc-typehints = { version = "^1.17.0", optional = true }
+pydata-sphinx-theme = { version = "^0.12.0", optional = true }
+sphinxcontrib-apidoc = { version = "^0.3.0", optional = true }
+sphinx-click = { version = "^3.1.0", optional = true }
+# see: https://github.com/sphinx-doc/sphinx/issues/10291
+jinja2 = { version = "<3.1", optional = true}
+
+[tool.poetry.extras]
+docs = [
+    "importlib-metadata",
+    "myst-parser",
+    "pygments",
+    "sphinx",
+    "sphinx-autodoc-typehints",
+    "pydata-sphinx-theme",
+    "sphinxcontrib-apidoc",
+    "sphinx-click",
+    "jinja2"
+]
+#eds = ["eds-scikit"]
+
+[tool.poetry.scripts]
+cli = "bin.cli:cli"
+
+#################################################################################
+# Tooling configs                                                               #
+#################################################################################
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.16.2"
+ipdb = "^0.13.11"
+
+[tool.black]
+line-length = 79
+
+[tool.coverage.run]
+branch = true
+concurrency = ["multiprocessing"]
+parallel = true
+source = ["medem"]
+
+[tool.coverage.report]
+exclude_lines =[
+    "pragma: no cover",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
+fail_under = 70
+show_missing = true
+skip_covered = true
+
+[tool.isort]
+profile = "black"
+atomic = "true"
+combine_as_imports = "true"
+line_length = 79
+
+[tool.mypy]
+disallow_untyped_defs = false
+files = ["medem/*.py","bin/*.py"]
+exclude = "notebooks/config.py"
+ignore_missing_imports = true
+pretty = true
+show_column_numbers = true
+show_error_context = true
+show_error_codes = true
+
+[tool.pylint.basic]
+good-names-rgxs = ["^Test_.*$", "logger"]
+
+[tool.pylint.messages_control]
+disable = [
+  # Explicitly document only as needed
+  "missing-module-docstring",
+  "missing-class-docstring",
+  "missing-function-docstring",
+  # Black & Flake8 purview
+  "line-too-long",
+  #"bad-continuation",
+  "c-extension-no-member",
+  # Ignore errors resulting from Jupyter notebook-style programming
+  "invalid-name",
+  "redefined-outer-name",
+  "reimported",
+  "ungrouped-imports",
+  "wrong-import-order",
+  "wrong-import-position",
+]
+
+[tool.pylint.similarities]
+# Ignore imports when computing similarities.
+ignore-imports = "yes"
+
+[tool.cruft]
+skip = [
+    ".git",
+    "README.md",
+]
+[tool.pytest.ini_options]
+addopts = ["-rfsxX", "-l", "--tb=short", "--strict-markers", "-vv", "-pno:warnings"]
+log_cli = 1
+log_cli_level = "ERROR"
+xfail_strict = "true"
+testpaths = ["tests",]
+norecursedirs = [".*", "*.egg", "build", "dist",]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

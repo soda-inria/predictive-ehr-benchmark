@@ -1,0 +1,40 @@
+hospital_name,trigram,care_site_id
+HOPITAL AMBROISE PARE,APR,014
+Antoine-Béclère,ABC,028
+Armand-Trousseau,TRS,088
+HOPITAL AVICENNE,AVC,095
+Beaujon,BJN,005
+Berck,BRK,009
+Bicètre,BCT,010
+Bichat Claude-Bernard,BCH,011
+Bretonneau,BRT,033
+Broca,BRC,016
+Charles-Foix,CFX,042
+GH COCHIN,CCH,021
+Corentin-Celton,CCL,022
+HEGP,EGP,075
+Emile-Roux,ERX,029
+Georges-Clemenceau,GCL,036
+Hospitalisation à domicile,HAD,
+Hendaye,HND,038
+Henri-Mondor,HMN,026
+Hôtel-Dieu,HTD,041
+HOPITAL JEAN VERDIER,JVR,032
+Joffre-Dupuytren,JFR,044
+Lariboisière,LRB,047
+La Roche-Guyon,LRG,049
+Louis-Mourier,LMR,053
+Necker-Enfants malades,NCK,061
+Paul-Brousse,PBR,096
+Paul-Doumer,VPD,064
+Pitié Salpétrière,PSL,066
+GH RAYMOND POINCARE-BERCK,RPC,068
+Rene-Muret,RMB,069
+Robert-Debré,RDB,070
+Rotschild,RTH,072
+Saint-Antoine,SAT,073
+Saint-Louis ,SLS,076
+San Salvadour,SSL,084
+Sainte-Périne,SPR,079
+Tenon,TNN,087
+Vaugirard,VGR,090
