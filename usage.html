@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Usage &#8212; medem 0.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'usage';</script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exploration of the data for embedding transportability experiences" href="exploration.html" />
+    <link rel="prev" title="Predictive algorithms from Electronic Health Records" href="readme.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/logo-project.svg" class="logo__image only-light" alt="Logo image">
+    <img src="_static/logo-project.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="readme.html">
+                        Predictive algorithms from Electronic Health Records
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="exploration.html">
+                        Exploration
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://team.inria.fr/soda/" title="SoDa" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><img src="_static/logo-project.svg" class="icon-link-image" alt="SoDa"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://gitlab.inria.fr/soda/medical_embeddings_transfer" title="Github" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">Github</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="readme.html">
+                        Predictive algorithms from Electronic Health Records
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="exploration.html">
+                        Exploration
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://team.inria.fr/soda/" title="SoDa" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><img src="_static/logo-project.svg" class="icon-link-image" alt="SoDa"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://gitlab.inria.fr/soda/medical_embeddings_transfer" title="Github" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">Github</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h1>
+<section id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">#</a></h2>
+<section id="data-and-compute-environment">
+<h3>Data and compute environment<a class="headerlink" href="#data-and-compute-environment" title="Permalink to this headline">#</a></h3>
+<p>This code is focused on the computing and data environment from Paris Greater Hospitals. The data format should be OMOP.</p>
+</section>
+<section id="install-the-package">
+<h3>Install the package<a class="headerlink" href="#install-the-package" title="Permalink to this headline">#</a></h3>
+<p>Install poetry and python 3.10. Inside the project folder, run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>install
+</pre></div>
+</div>
+</section>
+</section>
+<section id="create-the-study-population">
+<h2>Create the study population<a class="headerlink" href="#create-the-study-population" title="Permalink to this headline">#</a></h2>
+<p>Three populations are available, corresponding to three predictive tasks: length of stay interpolation (LOS), prognosis of the next diagnosis billing codes (grouped into 21 ICD10 chapters), prognosis of major adverse cardio-vascular events (MACE).</p>
+<ul class="simple">
+<li><p>The scripts for building each population are in <code class="docutils literal notranslate"><span class="pre">medem.populations</span></code>.To build the length-of-stay population, run:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>medem.populations.t1_los_population.py
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The configuration for each populations are in <code class="docutils literal notranslate"><span class="pre">medem.exeperiences.configurations.py</span></code>. Most importantly, the user specifies the database name. At loading time, the code will look for a database inside the hive database of the APHP at: <code class="docutils literal notranslate"><span class="pre">hdfs://bbsedsi/apps/hive/warehouse/bigdata/omop_exports_prod/hive/{database_name}.db/</span></code>. All parameters that can be specified are:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="s2">&quot;database_name&quot;</span><span class="p">:</span> <span class="s2">&quot;cse210038_20220921_160214312112&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cohort_name&quot;</span><span class="p">:</span> <span class="s2">&quot;complete_hospitalization_los&quot;</span><span class="p">,</span> <span class="c1"># name </span>
+    <span class="s2">&quot;study_start&quot;</span><span class="p">:</span> <span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2017-01-01&quot;</span><span class="p">),</span> <span class="c1"># start of the study period</span>
+    <span class="s2">&quot;study_end&quot;</span><span class="p">:</span> <span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2022-06-01&quot;</span><span class="p">),</span> <span class="c1"># end of the study period. Outside of this range, all data is thrown away </span>
+    <span class="s2">&quot;min_age_at_admission&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="c1"># minimum age at admission</span>
+    <span class="s2">&quot;sup_quantile_visits&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span> <span class="c1"># exclude patients having a number of visits above the resulting threshold number of visits per patient</span>
+    <span class="s2">&quot;task_name&quot;</span><span class="p">:</span> <span class="n">TASK_LOS_CATEGORICAL</span><span class="p">,</span> <span class="c1"># define the prognosis task </span>
+    <span class="s2">&quot;los_categories&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]),</span> <span class="c1"># define the categories for the task,</span>
+    <span class="s2">&quot;with_incomplete_hospitalization&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># include also outpatient visits ? </span>
+    <span class="s2">&quot;visits_w_billing_codes_only&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="c1"># keep only visits with billing codes ?</span>
+    <span class="s2">&quot;horizon_in_days&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>  <span class="c1"># used for avoiding right-censoring</span>
+    <span class="s2">&quot;event_tables&quot;</span><span class="p">:</span> <span class="n">DEFAULT_EVENT_CONFIG</span><span class="p">,</span> <span class="c1"># what event tables to use as features</span>
+    <span class="s2">&quot;test_size&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="s2">&quot;n_min_events&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1"># minimum number of events for a given medical code be included. Too rare events are thrown away.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The underlying functions used for all population are <code class="docutils literal notranslate"><span class="pre">medem.preprocessing.selection.py:select_population</span></code> and <code class="docutils literal notranslate"><span class="pre">medem.preprocessing.selection.py:create_outcome</span></code>. Refer to these functions to see every details on the population flowcharts and task definitions.</p></li>
+</ul>
+</section>
+<section id="run-an-experiment">
+<h2>Run an experiment<a class="headerlink" href="#run-an-experiment" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The scripts to benchmark different machine learning pipelines are in <code class="docutils literal notranslate"><span class="pre">medem.experiences.setups</span></code>. For
+example to launch the benchmark on the :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>medem.experiments.setups/los_prediction.py
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The configurations for the experiments are in <code class="docutils literal notranslate"><span class="pre">medem.experiments.configurations.py</span></code>. The available parameters are:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONFIG_LOS_ESTIMATION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;validation_size&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span>  <span class="c1"># validation size</span>
+    <span class="s2">&quot;subtrain_size&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># size of the succesives effective train sets </span>
+    <span class="s2">&quot;splitting_rs&quot;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span>  <span class="c1"># random seeds </span>
+    <span class="s2">&quot;estimator_config&quot;</span><span class="p">:</span> <span class="n">ESTIMATORS_TASK_LOS</span><span class="p">,</span> <span class="c1"># list of estimators to benchmark</span>
+    <span class="s2">&quot;featurizer_config&quot;</span><span class="p">:</span> <span class="n">FEATURIZERS_TASK_LOS</span><span class="p">,</span> <span class="c1"># list of featurizers to benchmark</span>
+    <span class="s2">&quot;randomsearch_scoring&quot;</span><span class="p">:</span> <span class="s2">&quot;roc_auc&quot;</span><span class="p">,</span> <span class="c1"># scoring function for the random search</span>
+    <span class="s2">&quot;randomsearch_n_iter&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1"># number of random search iterations</span>
+    <span class="s2">&quot;randomsearch_rs&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="c1"># random seed for the random search</span>
+    <span class="s2">&quot;n_min_events&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1"># minimum number of events for a given medical code be included. Too rare events are thrown away.</span>
+    <span class="s2">&quot;colname_demographics&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">STATIC_FEATURES_DICT</span><span class="p">,</span>
+    <span class="p">],</span> <span class="c1"># list of static features to include</span>
+    <span class="s2">&quot;local_embeddings_params&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;colname_concept&quot;</span><span class="p">:</span> <span class="n">COLNAME_SOURCE_CODE</span><span class="p">,</span>
+        <span class="s2">&quot;window_radius_in_days&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+        <span class="s2">&quot;window_orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;center&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;backend&quot;</span><span class="p">:</span> <span class="s2">&quot;pandas&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;d&quot;</span><span class="p">:</span> <span class="n">N_COMPONENTS</span><span class="p">,</span>
+    <span class="p">},</span> <span class="c1"># parameters passed to the local embeddings pipeline if present in featurizer config</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To use the slurm cluster on the AP-HP data warehouse, use the dedicated sbatch scripts. You might need to change some path in these scripts that are specific to a given AP-HP user and project:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">scripts</span><span class="o">/</span><span class="n">experiences</span><span class="o">/</span>
+<span class="n">mkdir</span> <span class="n">logs</span>
+<span class="n">sbatch</span> <span class="n">los_sbatch</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>NB: all codes to run experiment with the transformer model are in  <a class="reference external" href="https://github.com/strayMat/cehr-bert">a fork from the original cehr-bert transformer model</a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="readme.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Predictive algorithms from Electronic Health Records</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="exploration.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Exploration of the data for embedding transportability experiences</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisites">
+   Pre-requisites
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-and-compute-environment">
+     Data and compute environment
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-the-package">
+     Install the package
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-the-study-population">
+   Create the study population
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#run-an-experiment">
+   Run an experiment
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="_sources/usage.md.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>

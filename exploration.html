@@ -1,0 +1,1394 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Exploration of the data for embedding transportability experiences &#8212; medem 0.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exploration';</script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <img src="_static/logo-project.svg" class="logo__image only-light" alt="Logo image">
+    <img src="_static/logo-project.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="readme.html">
+                        Predictive algorithms from Electronic Health Records
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Exploration
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://team.inria.fr/soda/" title="SoDa" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><img src="_static/logo-project.svg" class="icon-link-image" alt="SoDa"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://gitlab.inria.fr/soda/medical_embeddings_transfer" title="Github" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">Github</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="readme.html">
+                        Predictive algorithms from Electronic Health Records
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="usage.html">
+                        Usage
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Exploration
+                      </a>
+                    </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://team.inria.fr/soda/" title="SoDa" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><img src="_static/logo-project.svg" class="icon-link-image" alt="SoDa"/></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://gitlab.inria.fr/soda/medical_embeddings_transfer" title="Github" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">Github</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <section id="exploration-of-the-data-for-embedding-transportability-experiences">
+<h1>Exploration of the data for embedding transportability experiences<a class="headerlink" href="#exploration-of-the-data-for-embedding-transportability-experiences" title="Permalink to this headline">#</a></h1>
+<p>This journal contains various notes on data exploration.</p>
+<section id="id1">
+<h2>2023-07-14<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Satisfying inclusion criteria temporal repartition:</p>
+<p><img alt="Alt text" src="_images/inclusion_criteria_after_sessionization.png" /></p>
+</section>
+<section id="id2">
+<h2>2023-07-13<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<section id="sessionization-of-the-visits">
+<h3>Sessionization of the visits<a class="headerlink" href="#sessionization-of-the-visits" title="Permalink to this headline">#</a></h3>
+<p>1 - Attempt to use the eds-scikit code: it went through quite easily: I saved a table. However, I still don’t fully understand their code, and in particular I don’t have the impression that they really do sessionalization, which seems to be the right technical solution.</p>
+<p>2 - recode only what I need ie. sessionalize all the visits I’m interested in with a groupby.
+In doing so, I realize that I’m finding cases where the discharged source is wrong (indicated home when it’s not the end of hospitalization). Of the total of 7,055,373 sessions, at least 443,463 are the fusion of at least two visits. The beginning of the distribution of the number of visits per session is as follows:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>n_stays_by_session</p></th>
+<th class="head"><p>count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>6023607</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>358080</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>59101</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>14441</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>5530</p></td>
+</tr>
+</tbody>
+</table>
+<p>I decide to merge the visits into a session, retrieving the information from either the first or the last visit, depending on the type of information. I also concatenate the visit_source_value. The corresponding counts are (maintaining the order):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>visit_source_value</p></th>
+<th class="head"><p>count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>hospitalisés hospitalisation incomplète</p></td>
+<td><p>33450</p></td>
+</tr>
+<tr class="row-odd"><td><p>hospitalisation incomplète hospitalisés</p></td>
+<td><p>153527</p></td>
+</tr>
+<tr class="row-even"><td><p>hospitalisés</p></td>
+<td><p>4695311</p></td>
+</tr>
+<tr class="row-odd"><td><p>hospitalisation incomplète</p></td>
+<td><p>1584782</p></td>
+</tr>
+</tbody>
+</table>
+<p>I lose a lot more stays by refusing to use the stay_id and relying only on the dates of the stay and the dates of the diagnoses.
+Before sessionization, I merged the diagnoses to the visits and kept only the visits with at least one diagnosis code. I filtered-out 35,441 patients.
+Right now, I keep the visits only if a code occurs between visit_start and visit_end. I filtered-out 124,608 patients.</p>
+</section>
+</section>
+<section id="id3">
+<h2>2023-06-19<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>I made an error on the study end date. Based on the MACE event occurrence, it is now 2020-12-31 to fall before the MACE prevalence drop.</p></li>
+<li><p>The MACE prevalence is not the same for the test hospital than for the train hospital:
+<img alt="" src="_images/train_test_prevalence_mace_random_index.PNG" /></p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>2023-06-15<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h2>
+<p>Exploration of the different choices of index visits for the MACE cohort. It seems that choosing later visits yield less MACE codes (first eligible visit, then random and last selected). The more delayed inclusion visit I am choosing the less MACE prevalence I get.
+On one hand, if I delay the inclusion visit, I get more and more stays in demonimator, since less index stays are discarded as having a MACE code (first=22296, random=20720, last=18974). It is as if the MACE events disappear progressively.
+In the same time, there is less and less MACE events in the followup periods: 14670, 10036, 4031. Why ?</p>
+<p>One explanation is given by plotting all MACE codes in the data for the eligible population. We clearly see that there is a stable regime only between early 2018 and the first quarter of 2021. This in favor of limiting the study between 2018-01-01 and 2021-12-31. The recrudescence during 2018-2019 year is strange though.</p>
+<p><img alt="" src="_images/mace_code_in_control_cohort_for_included_patients.png" /></p>
+<p>The inclusion seems ok: visit table should be complete, at least adter 2018 and up to 2021.
+<img alt="" src="_images/mace_included_patients_random_index.PNG" /></p>
+<p>The downward trend is less clear when looking at all patients in the cohort:</p>
+<p><img alt="" src="_images/mace_code_in_control_cohort_for_all_patients.PNG" /></p>
+<p>Even when restricting to the 2018/2022 study period, I get more than two times more MACE events for random index (7688) than for last index (3381).
+I’ll keep on with random.</p>
+</section>
+<section id="id5">
+<h2>2023-06-14<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Explorer différent choix de la courbe roc pour mieux comprendre ce que signifie les performances du modèle en terme de détection.</p></li>
+<li><p>Correction sur les targets : supression des outcomes avant l’inclusion.</p></li>
+<li><p>Premiers résultats cf issue</p></li>
+<li><p>Proposition de target (autre complication?): <a class="reference external" href="https://www.has-sante.fr/upload/docs/application/pdf/2023-04/rapport_idmdc30_retour_dossiers_2023.pdf">mortalité à 30 jours post-IDM</a>. La HAS donne 4.5% prévalence dans la population cible.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>2023-06-12<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Finish the adapation to big data of MACE: I get back the final person (400K rows) and event tables (13.8M rows) with a collect()</p></li>
+<li><p>However sinking_parquet does not work at the end with a strange rust error. It might be inersting to cut the computational graph at some point:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>person.sink_parquet(str(path2person))
+      3 event.sink_parquet(str(path2event))
+
+File ~/.user_conda/miniconda/envs/py310_matthieu/lib/python3.10/site-packages/polars/lazyframe/frame.py:1595, in LazyFrame.sink_parquet(self, path, compression, compression_level, statistics, row_group_size, data_pagesize_limit, maintain_order, type_coercion, predicate_pushdown, projection_pushdown, simplify_expression, no_optimization, slice_pushdown)
+   1584     slice_pushdown = False
+   1586 lf = self._ldf.optimization_toggle(
+   1587     type_coercion,
+   1588     predicate_pushdown,
+   (...)
+   1593     streaming=True,
+   1594 )
+-&gt; 1595 return lf.sink_parquet(
+   1596     path=path,
+   1597     compression=compression,
+   1598     compression_level=compression_level,
+   1599     statistics=statistics,
+   1600     row_group_size=row_group_size,
+   1601     data_pagesize_limit=data_pagesize_limit,
+   1602     maintain_order=maintain_order,
+   1603 )
+
+PanicException: called `Option::unwrap()` on a `None` value
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>2023-06-08<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>4 hours to understand that polars with hdfs is shacky.</p></li>
+<li><p>Then minor corrections to the selection procedures to avoid OOM (bad collect timing for example)</p></li>
+<li><p>birth_datetime=NaT in all the control cohort. Need to reconstruct from the visit occurrences.</p></li>
+</ul>
+<p><img alt="" src="_images/control_cohort_reconstructed_age_pyramid.PNG" /></p>
+</section>
+<section id="id8">
+<h2>2023-04-10<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Check the nabm 2 loinc mapping with susana/ANS mappings. More matches with the susana (84%) / ANS (78%) on the 757 nabm codes in the snds embeddings. Nextstep is mapping the APHP codes from anabio to loinc to nabm and throw away all codes that do not have a mathch. An arbitrary choice has been made to map to a unique nabm the 3600 loinc codes that have multiple nabm codes.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h2>2023-04-08<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>7 days surely is not adpated for the delta decay for the prognosis task. The distribution of delta between the target visit and the first visit of inclusion has the following quantiles: q=[0.1, 0.25, 0.5, 0.75, 0.9] for  the following. This indicates than the order of magnitude is closer to 100 days than 10 days.</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>0.1</p></th>
+<th class="head"><p>0.25</p></th>
+<th class="head"><p>0.5</p></th>
+<th class="head"><p>0.75</p></th>
+<th class="head"><p>0.9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10.0</p></td>
+<td><p>49.0</p></td>
+<td><p>225.0</p></td>
+<td><p>646..0</p></td>
+<td><p>1090</p></td>
+</tr>
+</tbody>
+</table>
+<p>Distribution of these delta between the target visit and the first visit of inclusion</p>
+<p><img alt="" src="_images/distribution_of_delta_inclusion_target_visit_prognosis.png" /></p>
+</section>
+<section id="id10">
+<h2>2023-04-06<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Replication of cooccurrence matrix between hospitals is working well and I got the same clusters than Theo on the diabetes extraction.</p></li>
+<li><p>Description of chapters statistics for our 14K patients with at least 2 visits:</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p></p></th>
+<th class="text-right head"><p>Factors influencing health status and contact with health services</p></th>
+<th class="text-right head"><p>Endocrine, nutritional and metabolic diseases</p></th>
+<th class="text-right head"><p>Diseases of the circulatory system</p></th>
+<th class="text-right head"><p>Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified</p></th>
+<th class="text-right head"><p>Neoplasms</p></th>
+<th class="text-right head"><p>Mental, Behavioral and Neurodevelopmental disorders</p></th>
+<th class="text-right head"><p>Diseases of the nervous system</p></th>
+<th class="text-right head"><p>Diseases of the digestive system</p></th>
+<th class="text-right head"><p>Diseases of the genitourinary system</p></th>
+<th class="text-right head"><p>Diseases of the musculoskeletal system and connective tissue</p></th>
+<th class="text-right head"><p>Diseases of the respiratory system</p></th>
+<th class="text-right head"><p>Injury, poisoning and certain other consequences of external causes</p></th>
+<th class="text-right head"><p>Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism</p></th>
+<th class="text-right head"><p>Certain infectious and parasitic diseases</p></th>
+<th class="text-right head"><p>Diseases of the eye and adnexa</p></th>
+<th class="text-right head"><p>External causes of morbidity</p></th>
+<th class="text-right head"><p>Diseases of the skin and subcutaneous tissue</p></th>
+<th class="text-right head"><p>Pregnancy, childbirth and the puerperium</p></th>
+<th class="text-right head"><p>Codes for special purposes</p></th>
+<th class="text-right head"><p>Congenital malformations, deformations and chromosomal abnormalities</p></th>
+<th class="text-right head"><p>Diseases of the ear and mastoid process</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>prevalence</p></td>
+<td class="text-right"><p>52.9304</p></td>
+<td class="text-right"><p>28.1112</p></td>
+<td class="text-right"><p>27.9919</p></td>
+<td class="text-right"><p>26.7214</p></td>
+<td class="text-right"><p>16.5087</p></td>
+<td class="text-right"><p>16.2561</p></td>
+<td class="text-right"><p>15.3366</p></td>
+<td class="text-right"><p>15.2453</p></td>
+<td class="text-right"><p>14.3328</p></td>
+<td class="text-right"><p>14.024</p></td>
+<td class="text-right"><p>11.441</p></td>
+<td class="text-right"><p>10.8444</p></td>
+<td class="text-right"><p>9.7424</p></td>
+<td class="text-right"><p>8.5983</p></td>
+<td class="text-right"><p>6.6049</p></td>
+<td class="text-right"><p>4.75188</p></td>
+<td class="text-right"><p>4.62554</p></td>
+<td class="text-right"><p>4.40093</p></td>
+<td class="text-right"><p>4.12718</p></td>
+<td class="text-right"><p>1.49505</p></td>
+<td class="text-right"><p>1.15112</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Pass the selection on visits w cim10 in the selection function, finish the implementation with icd10_lvl=1. Added n_coded_visits and target_visit_ix to the target dataframe.</p></li>
+<li><p>Try refacto with eds_scikit.phenotype Phenotype class : but when reading the documentation, it does not seems mature enough, since the criteria are only code based. Adding <span class="xref myst">an issue for generalization of the inclusion criteria</span>.</p></li>
+<li><p>updating eds_scikit to 0.1.5 : changes in the HiveData class that create a little more overhead when using <code class="docutils literal notranslate"><span class="pre">HiveData.__get_attr__(table_name)</span></code> on koalas. Not possible anymore to use <code class="docutils literal notranslate"><span class="pre">.__get_attribute__</span></code>. It seems to do some operation but not clear since it does not collect the data either. Seems like he is caching the first rows. Maybe ask Vincent to look into the issue.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h2>2023-04-05<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Implementing the chapter mapping for cim10_lvl_1: I got 16K patients that respect the criteria. How is it possible that I have more patients than the 13K patients with at least 2 visits ? I have to check this.</p></li>
+</ul>
+</section>
+<section id="id12">
+<h2>2023-04-04<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h2>
+<p>Two criteria to define prognosis task: cim10 level (only signifcant at 2 digits) a,n dmin_prevalence. I mimic the Behrt paper for prevalence with min_prevalence=0.01.
+What level of cim10 hiearchy should I use ? If I keep fix the min_prevalence, the number of codes does not vary that much for the 13662 patients selected:</p>
+<ul class="simple">
+<li><p>For 2 digits: 98  codes, 10558 patients</p></li>
+<li><p>For 3 digits: 74 codes, 8577 patients</p></li>
+<li><p>For 4 digits: 67 codes, 8003 patients</p></li>
+</ul>
+<p>Question: Do I restain only on target ? or also on the previous codes. (I would say target only).</p>
+</section>
+<section id="id13">
+<h2>2023-04-03<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h2>
+<section id="exploration-of-number-of-patients-with-at-least-two-hospitalizations">
+<h3>Exploration of number of patients with at least two hospitalizations<a class="headerlink" href="#exploration-of-number-of-patients-with-at-least-two-hospitalizations" title="Permalink to this headline">#</a></h3>
+<p>Do I have sufficient patients with at least 2 stays ?</p>
+<ul class="simple">
+<li><p>I have 19K patients with at least two visit_occurrences and appropriate basic selection criteria. When restringing to patient with at least two visits with cim10, it drops to 13662 patients (and less than 7 visits w coded events). Then I randomly sample a target visit for each patient in his visits.</p></li>
+</ul>
+<p><img alt="" src="_static/img/cohort/icd10_prognosis__age_min_18__dates_2017-01-01_2022-06-01__task__prognosis.svg" /></p>
+</section>
+<section id="detail-of-the-behrt-task">
+<h3>Detail of the Behrt task:<a class="headerlink" href="#detail-of-the-behrt-task" title="Permalink to this headline">#</a></h3>
+<p>Better predictive task: A lot of previous works do not look at rehospitalization or mortality but at billing code prognosis. Example of such papers are :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.nature.com/articles/s41598-020-62922-y">Behrt, 2020</a>. The goal is to predict next diagnosis for GP visits (1.6M patients with at least 5 visits). They evaluate with Average Precision Score and AUROC, weighting the results in the figure by occurence ratio. Three horizon (tasks) : next visit (T1), 6 month, 12 months. For the next visit task (T1), they have 699K patients. For each patient, they select randomly one visit that is above index 3 in the order of visits and they predict for j+1. They group the CIM10 codes into 301 codes thanks to <a class="reference external" href="https://rdrr.io/github/rmgpanw/codemapper/f/vignettes/caliber.Rmd">caliber harmonization</a>. This seems needed because of the mixture of read2, read3 and ICD10 vocabularies. Following the Drees Behrt experiment on the SNDS, I will group into ICD10:2d codes (~200 unique codes) and ICD10:3d codes (~1K codes), the former being for interpretability and the later to compare to Drees performances.
+NB every group appearing less than 1% is discarded from the target. They show that position and age embeddings imrove the disease-only baseline, respectively from in total (0.7 AUROC /7.5 APS).</p></li>
+<li><p>TODO:</p></li>
+</ul>
+</section>
+</section>
+<section id="id14">
+<h2>2023-03-29<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Adapt the report code to ouptut lineplots instead of boxplot</p></li>
+<li><p>Save and include a better figure to the simpa presentation for drees prez.</p></li>
+</ul>
+</section>
+<section id="id15">
+<h2>2023-03-28<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h2>
+<p><strong>Launching a full expe with baseline comparison and fine grained</strong></p>
+<p><strong>What is the correlation between number of events/cim10 and LOS ?</strong>. The hypothesis is that it is a dumb extrapolation task because a direct link can be made between number of event and LOS. It is not so clear when doing the analysis with a poor pearson correlation coefficient :</p>
+<p><img alt="" src="_images/correlation_los_nb_events.png" /></p>
+<p><span class="xref myst">notebook on APHP</span></p>
+</section>
+<section id="id16">
+<h2>2023-03-23<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h2>
+<p><strong>Build static features</strong>: the datetime used in the visit_occurrences are falsely all set to a night datetime (22 or 23pm). Do not rely on this for features</p>
+<p><strong>Exploring the 8000K persons included with empty information</strong>. Included in the cohort construction but finally excluded because they do not have any events in the database. They sometimes have measurements (1400/8K), do not have a cost neither a billing codes (“very strange for hospitalized people”). The static information on the stay are similar to the full cohort. 5700 have a note.
+Differences with finally included stays: They are attributed more to female (0.7 compared to 0.55 for finally included stays), they concern more admission sans consultation (0.62 vs. 0.53). They abnormally come from Lariboisière (0.25). This points to services that have not deployed orbis and thus have less information on patients. They are more unité d’hebergement as well in the empty stays. Far less men in the empty visits population and younger people. I am wondering if this is really hospitalizations or consultations incorrectly labelled as hospitalization.
+<span class="xref myst">url to analysis notebook on aphp jupyter</span></p>
+<p><strong>Exploring length of stay extrapolation</strong> as a new task to iterate over the model and have more convincing results.
+I restrict to complete hospitalization and a binary task: is the stay shorter/longer than 7 days, considering all information of the stay. The task could be improved by considering only billing codes for the first day.
+I calibrate the los task on my previous cohort (rehospitalization complete or not at 30 days): Got the following distribution for the los.</p>
+<p><img alt="" src="_images/lengt_of_stay_distribution.png" /></p>
+<p>Restricting on the hospitalized, we see that 30% are hospitalized less than 1 day, and 22% more than 7 days. I keep the 7 days threshold since it is often mentionned in the literature (especially for critical cares).</p>
+<p>Could compare to the definition of bed blockers for <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S039876202300069X">Soins Médicaux de Réadaptation from ARS IDF</a> defined as mean + sd (in coherent nosological groups) which would give 16 days here if the goal is to detect blockers. Instead the rational would rather be to detect long vs short stays for middle-term plannification and resource allocations.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p></p></th>
+<th class="text-right head"><p>count</p></th>
+<th class="text-right head"><p>mean</p></th>
+<th class="text-right head"><p>std</p></th>
+<th class="text-right head"><p>min</p></th>
+<th class="text-right head"><p>10%</p></th>
+<th class="text-right head"><p>25%</p></th>
+<th class="text-right head"><p>33%</p></th>
+<th class="text-right head"><p>50%</p></th>
+<th class="text-right head"><p>66%</p></th>
+<th class="text-right head"><p>75%</p></th>
+<th class="text-right head"><p>90%</p></th>
+<th class="text-right head"><p>95%</p></th>
+<th class="text-right head"><p>max</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>length_of_stay</p></td>
+<td class="text-right"><p>21558</p></td>
+<td class="text-right"><p>5.81478</p></td>
+<td class="text-right"><p>10.5749</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>1</p></td>
+<td class="text-right"><p>2</p></td>
+<td class="text-right"><p>3</p></td>
+<td class="text-right"><p>5</p></td>
+<td class="text-right"><p>7</p></td>
+<td class="text-right"><p>13</p></td>
+<td class="text-right"><p>20</p></td>
+<td class="text-right"><p>369</p></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: Incomplete hospitalizations seems to have more buggy los. It is due to the fact that irradations, dialysis or seances are let open as long as the patient is coming.</p>
+</section>
+<section id="id17">
+<h2>2023-03-10<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>[ ] Consider using a differen task than rehospitalizaiton since it seems a super
+hard task (ref to beaulieujones risk stratification article with 0.67 of perf
+max). Loss or mortlaity</p></li>
+<li><p>Adding the two part of history into the features yields memory blow on the
+project (&gt;16Go).</p></li>
+<li><p>If I take an horizon of 7 days, I have 45K patients (less with event of
+course) and a prevalence of 3.46%.</p></li>
+</ul>
+</section>
+<section id="id18">
+<h2>2023-03-08<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>https://gitlab.inria.fr/soda/matthieu_doutreligne/-/issues/156</p></li>
+</ul>
+</section>
+<section id="id19">
+<h2>2023-03-07<a class="headerlink" href="#id19" title="Permalink to this headline">#</a></h2>
+<section id="new-experience-with-sample-weights-balanced-demographics-and-svd-added-for-snds-embeddings-and-count-event">
+<h3>New experience with sample_weights=balanced, demographics and SVD added for SNDS embeddings and Count Event<a class="headerlink" href="#new-experience-with-sample-weights-balanced-demographics-and-svd-added-for-snds-embeddings-and-count-event" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>The task is too hard. But interstingly, the snds embeddings seems to be good
+even for small sample size. However, not better than in-sample embeddings. The
+method is not bad but not a lot of interest to have the embeddings from
+elsewhere.</p></li>
+</ul>
+<p><img alt="" src="_images/roc_auc_score_performances.png" /></p>
+</section>
+</section>
+<section id="id20">
+<h2>2023-03-05<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>intersection with SNDS is 4416 out of 4923 on my population at 30 days</p></li>
+<li><p>[x] Launched vector embeddings for anti cohort</p></li>
+<li><p>Try with measurement but got memory error, so reverse to no measurement.</p></li>
+<li><p>Performances are quite mediocre for all models. Is the task too hard ?</p>
+<ul>
+<li><p>Maybe look at 7 days rehospital</p></li>
+<li><p>Maybe diminish the vector size because high sparsity for embeddings when
+computing from train set using d=50 (90%), d=100 (93%), d=150 (97%). Compared
+to SNDS where sparsity is 0%.</p></li>
+</ul>
+</li>
+<li><p>Why all models do have random performances ? not aligned identifiers</p></li>
+<li><p>Should save a model dictionnary to be able to reload : no I can use joblib
+to dump and load model</p></li>
+<li><p>I still have to create a from_pretrained method to load from external
+sources such as snds.</p></li>
+</ul>
+</section>
+<section id="id21">
+<h2>2023-03-03<a class="headerlink" href="#id21" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Finish the Event2vecFeaturizer, tested on data</p></li>
+</ul>
+</section>
+<section id="id22">
+<h2>2023-03-02<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>I have an issue with the coocurrence that shows negative values as if
+substraying by event count is too much : SOLVED, it was an inconsistent sort.groupby.</p></li>
+<li><p>Rewrite build_cooc to use sparse matrix.</p></li>
+<li><p>Finish coding the experience: run on rehospitalization, but all models have a
+roc at 0.50 as if nothing is learnable. I have to check that the train_score
+are not random and that the labels and features are well aligned.</p></li>
+<li><p>Finish coding the one_hot function trhoguh get_event_aggreation</p></li>
+<li><p>test the event cohort creation with the real data: pb of memory overflow on
+spark. A quick fix is to increase the spark.driver.memory up to 8g on my database.</p></li>
+<li><p>Loss of patients wo events : I lose 11K patients with the criteria to avoid
+patients without any event (in drug administration, condition or occurrence).
+Curiously, a lot of patients marked as hospitalized do not have any codes in
+the cim10 (36K out of 44K selected only have a code in CIM10). So I suppose
+that, when I restrict on dates (inclusion start - start of followup), I lose
+another 3k.</p></li>
+<li><p>Applying one_hot_encoding on my cohort of 33K patients, 1M events and 4858
+codes appearing at least 10 times, 10 sec and 5g of
+memory, sparsity is uuuuuuuultra high with 99.8% of sparsity.</p></li>
+</ul>
+</section>
+<section id="id23">
+<h2>2023-03-01<a class="headerlink" href="#id23" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The mapping will be hard to do between snds and aphp biology concepts : is
+there a nabm2loinc ? First, don’t do biology ?</p></li>
+<li><p>Begin to extract features:</p>
+<ul>
+<li><p>drug_exposure_administration: no missing start datetime, no missing atc code</p></li>
+<li><p>condition_occurrence: no missing start datetime, nor missing cim10 code</p></li>
+<li><p>procedure_occurrence: no missing datetime, no missing procedure_source_value</p></li>
+<li><p>measurement: no missing datetime, no missing measurement_source_value,</p></li>
+</ul>
+</li>
+<li><p><strong>Decision on missing followup:</strong> on the 806 wo end_datetime_visit, only 10 are
+deceased. So either, death is missing, either this is due to a loss of data in
+the datalake pipeline. I try to get back the end from rss from
+visit_end_datetime. And if I don’t succeed I throw away the visit. See
+<code class="docutils literal notranslate"><span class="pre">get_datetime_from_visit_detail</span></code> for precisions.</p></li>
+<li><p><strong>Decision on target</strong>: Use a binary task by default with death or
+rehospitalization. See <code class="docutils literal notranslate"><span class="pre">coalesce_outcomes</span></code> function for precisions.</p></li>
+</ul>
+</section>
+<section id="id24">
+<h2>2023-02-24<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Analyse the target variation among the hospitals. There is a pretty stable
+range rate among the sufficiently big hospitals around 0.16. THe small
+hospital acts as outliers. I struggle to have a good rpz for this. Maybe a
+categorical boxplot with category being size of hospitals. Then if an hospital
+is an outlier, I label it on the plot. The legend give the full group names.</p></li>
+<li><p>Create the targets: there are 806 out of 45601 includede patients that have
+missing start of followup. I have to take a decision. Either exclude them,
+either populate the end of visit with something.</p></li>
+<li><p>create a script for experience setup.</p></li>
+<li><p>check the inconsistancy between flowchart and script results:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">initial</span> <span class="mi">199824</span>
+<span class="n">In</span> <span class="n">observation</span> <span class="n">period</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span> <span class="o">/</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">01</span> <span class="mi">65979</span><span class="p">,</span> <span class="nb">all</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">previous</span>
+<span class="n">With</span> <span class="n">sufficient</span> <span class="n">horizon</span> <span class="p">(</span><span class="mi">90</span> <span class="n">days</span><span class="p">)</span> <span class="n">after</span> <span class="n">admission</span> <span class="mi">63655</span><span class="p">,</span>  <span class="nb">all</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">previous</span><span class="o">.</span>
+<span class="n">Strictly</span> <span class="n">less</span> <span class="n">than</span> <span class="mf">7.0</span> <span class="n">hospitalizations</span> <span class="mi">61925</span><span class="p">,</span> <span class="ow">not</span> <span class="n">at</span> <span class="nb">all</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">previous</span>
+<span class="n">Aged</span> <span class="n">more</span> <span class="n">than</span> <span class="mi">18</span> <span class="mi">47101</span>
+</pre></div>
+</div>
+<p>Flowchart gives 63315 instead of 63655 at the second stage.  Found the error:
+introduced when added a new filter on horizon. Fixed</p>
+</section>
+<section id="id25">
+<h2>2023-02-23<a class="headerlink" href="#id25" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Go again through cohort creation</p></li>
+<li><p>inspect more in details the rampup of the SI (with SAE): not necessary for now
+I think.</p></li>
+<li><p>Ameliorate the population selection to take into account an horizon (useful
+for the target) and to provide a flowchart.</p></li>
+<li><p>Implemented the create_target function</p></li>
+<li><p>Looked into the visit detail table:
+https://gitlab.inria.fr/soda/matthieu_doutreligne/-/issues/150. Take away:
+PASS/MOUV doublons for urgence and consultation externes without any easy information
+advantage from one or the other (care_site id and timestamps explored).</p></li>
+</ul>
+<section id="what-is-the-link-between-visit-occurrence-and-visit-details">
+<h3>What is the link between visit_occurrence and visit_details<a class="headerlink" href="#what-is-the-link-between-visit-occurrence-and-visit-details" title="Permalink to this headline">#</a></h3>
+<p><em>Analysis in 0_Population_hospitalizations.ipynb</em></p>
+<ul class="simple">
+<li><p>For hospitalization, does one line in visit_occurrence corresponds to one hospitalization ? With multiple ufr associated to each hospitalization, I would be tempted to say yes. However, there is no good way to be sure.</p></li>
+<li><p>For hospitalization, are there multiple lines in visit_details (corresponding probably to multiple units) ? Yes, the median is at 4 for both incomplete and complete hospitalizations.</p></li>
+<li><p>For consultation externe or urgences, how many lines are they in the
+visit_details table ? 2 exactly: one PASS and one MOUV for each visit. The
+MOUV lines are systematically linked to the PASS line through the
+visit_detail_parent_id column.</p>
+<ul>
+<li><p>For the consultation externes, there is no ufr linked to the MOUV lines. To the PASS lines, there are a non-negligeable part of the lines that are linked only at the hospital level (wo characterization of the service : more than 15%).</p></li>
+<li><p>For the urgence, there is a difference in care_site for the two lines (PASS/MOUV), but wo a clear logic appearing to me.</p></li>
+</ul>
+</li>
+</ul>
+<p>Do we have more time information in one or the other of the doublon PASS/MOUV ? Not at all.</p>
+<ul class="simple">
+<li><p>urgence : 0 non consistent start time between PASS and MOUV, 539 for end time</p></li>
+<li><p>consultation externe : 0 non consistent start time between PASS and MOUV, 0 for end time.</p></li>
+</ul>
+<section id="description-of-the-data">
+<h4>Description of the data:<a class="headerlink" href="#description-of-the-data" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Visit:
+Nb lines 1013046,
+Nb unique visit_occurence_id 1013046</p></li>
+<li><p>Visit detail:
+Nb lines 2648877,
+Nb unique visit_detail_id 2648877,
+Nb unique visit_occurence_id 1012884</p></li>
+</ul>
+<p>There is almost always at least one visit_detail by visit.</p>
+</section>
+</section>
+</section>
+<section id="id26">
+<h2>2023-01-26<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h2>
+<p>First notebook on aphp machines: <code class="docutils literal notranslate"><span class="pre">notebooks/0_find_hospitalization.ipynb</span></code></p>
+<p>We want to create an event dataframe and a static dataframe with the target
+value of rehospitalization at 30/90 days.</p>
+<section id="how-to-isolate-hospitalization">
+<h3>How to isolate hospitalization ?<a class="headerlink" href="#how-to-isolate-hospitalization" title="Permalink to this headline">#</a></h3>
+<p>There is two main issues to define the population of interest.</p>
+<p>The EDS data warehouse statistical unit is the visit. However, a hospital stay
+is made up of different visits in each UM (Unité Médicale) as explained in the <a class="reference external" href="https://documentation-snds.health-data-hub.fr/snds/fiches/concepts_PMSI.html#pmsi-had">SNDS
+documentation</a>.</p>
+<p>Moreover, the EDS contains hospitalization and external visits (consultations).
+For our rehospitalization task, we need to isolate each hospitalization and
+merge visits belongs to the same visits.</p>
+<ol class="arabic simple">
+<li><p>First, to **keep on
+I use the <code class="docutils literal notranslate"><span class="pre">visit_source_value</span></code> present in the <code class="docutils literal notranslate"><span class="pre">visit</span></code> table (only 2000K visit_source_value missings):</p></li>
+</ol>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p></p></th>
+<th class="text-right head"><p>visit_source_value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>consultation externe</p></td>
+<td class="text-right"><p>513506</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>urgence</p></td>
+<td class="text-right"><p>234135</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>hospitalisés</p></td>
+<td class="text-right"><p>170561</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>hospitalisation incomplète</p></td>
+<td class="text-right"><p>92883</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Use the <a class="reference external" href="https://aphp.github.io/eds-scikit/latest/functionalities/patients-course/visit_merging/#the-merge_visits-function">eds-scikit visit
+grouper</a>.
+It could link elements in a given hospitalization but it does not
+differentiate between hospitalization and consultations. Not tested yet.</p></li>
+<li><p><em>dropped alternative</em> Use the GHM: GHM is a classification (near 2000K codes) used in MCO for
+billing. It is a combination of the billing codes (PMSI and CCAM). There should
+only one GHM per MCO hospitalization and there is no GHM for consultations. A link between ghm and rum/rss can be made trough <code class="docutils literal notranslate"><span class="pre">cost_even_id</span></code>. However there are several ghm for one rss or one rum which should not be the case.</p></li>
+</ul>
+</section>
+<section id="what-is-the-repartition-of-selected-hospitalization-in-the-hospitals">
+<h3>What is the repartition of selected hospitalization in the hospitals ?<a class="headerlink" href="#what-is-the-repartition-of-selected-hospitalization-in-the-hospitals" title="Permalink to this headline">#</a></h3>
+<p>We link care_site_id declared in the <code class="docutils literal notranslate"><span class="pre">visit_occurrence</span></code> table to
+fact_relation_ship and care_site. We use the resources of eds-scikit[aphp],
+especially the
+<a class="reference external" href="https://aphp.github.io/eds-scikit/latest/datasets/care-site-hierarchy/">care-site-hiearchy</a>.</p>
+<p><img alt="" src="_images/n_hospitalizations_per_hospital.png" /></p>
+<p>The Information System ramp up seems homogeneous among the hospitals. To be
+sure, I should plot the same heatmap per total patients hospitalized in each
+hospital or per hospital activity (obtained with sae).</p>
+</section>
+<section id="cohort-creation">
+<h3>Cohort creation<a class="headerlink" href="#cohort-creation" title="Permalink to this headline">#</a></h3>
+<p>Following <a class="reference external" href="https://ohdsi.github.io/TheBookOfOhdsi/Cohorts.html">OHDSI definition of a
+cohort</a>, we define :</p>
+<ul class="simple">
+<li><p>A study period: 2017-(2022-06-01). It would be almost better to have from 2018 given the hospitalizations time repartition.</p>
+<ul>
+<li><p>study_start=2012, 80830 patients, 236634 hospitalizations</p></li>
+<li><p>study_start=2017, 67970 patients, 161423 hospitalizations</p></li>
+<li><p>study_start=2018, 61063 patients, 135927 hospitalizations</p></li>
+</ul>
+</li>
+</ul>
+<p>For the following study, I set the study range to [2017-01-01,2022-06-01]</p>
+<p><img alt="" src="_images/hospitalization_time_plot.png" /></p>
+<ul class="simple">
+<li><p>inclusion criteria: All patients having at least one hospitalization,
+observation period is all before this first hospitalization. Followup is all
+hospitalization events after this first hospitalization.</p></li>
+<li><p>exclusion criteria: Patients aged less than 18 before at the first hospitalization.</p></li>
+</ul>
+<p>Input: raw omop database
+Output: inclusion criteria with datetime</p>
+<p>Quantiles of the number of hospitalizations by patient:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.10</span>     <span class="mf">1.0</span>
+<span class="mf">0.50</span>     <span class="mf">1.0</span>
+<span class="mf">0.75</span>     <span class="mf">2.0</span>
+<span class="mf">0.90</span>     <span class="mf">5.0</span>
+<span class="mf">0.95</span>     <span class="mf">7.0</span>
+<span class="mf">0.99</span>    <span class="mf">15.0</span>
+</pre></div>
+</div>
+<p>I limit to the 95 % of hospitalizations.</p>
+<p>Number of patients with K hospitalizations during study period</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-right head"><p>n_hospitalizations</p></th>
+<th class="text-right head"><p>n_patients</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>38572</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>12754</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>5782</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>3238</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>2005</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>6</p></td>
+<td class="text-right"><p>1332</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>7</p></td>
+<td class="text-right"><p>955</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>8</p></td>
+<td class="text-right"><p>768</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>9</p></td>
+<td class="text-right"><p>542</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>10</p></td>
+<td class="text-right"><p>421</p></td>
+</tr>
+</tbody>
+</table>
+<p>Keep 63683 patients with at least one and less than 7.0 hospitalizations during the study period [2017-01-01 00:00:00, 2023-06-01 00:00:00]</p>
+<p>Then filtering out 15K patients aged less than 18:</p>
+<p>Keep 48472 patients:</p>
+<ul class="simple">
+<li><p>observed during the study period [2017-01-01 00:00:00, 2023-06-01 00:00:00]</p></li>
+<li><p>with one to 7.0 hospitalizations</p></li>
+<li><p>aged under 18</p></li>
+</ul>
+<p>In our target population during this study period, there is not a lot of
+patients having several hospitalizations in different hospitals.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-right head"><p>nb of different hospitals</p></th>
+<th class="text-right head"><p>number of patients</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>40743</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>6665</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>947</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>104</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>10</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="add-the-target">
+<h3>Add the target<a class="headerlink" href="#add-the-target" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>The target is defined by the inclusion criteria (first hospitalization start
+datetime) and the followup at horizon (30, 60 days).</p></li>
+</ul>
+<p>input: person, inclusion_criteria
+output: person with inclusion_criteria, inclusion_datetime, target_criteria, target_datetime</p>
+</section>
+<section id="create-the-cohort">
+<h3>Create the cohort<a class="headerlink" href="#create-the-cohort" title="Permalink to this headline">#</a></h3>
+<p>Input:</p>
+<ul class="simple">
+<li><p>omop database</p></li>
+<li><p>person with inclusion and target
+Output: event(icd10, ccam, labs, ), static (demographic + inclusion criteria +
+target criteria)</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="id27">
+<h1>2022-01-01<a class="headerlink" href="#id27" title="Permalink to this headline">#</a></h1>
+</section>
+<section id="old-experiments-on-the-snds">
+<h1>Old experiments on the SNDS<a class="headerlink" href="#old-experiments-on-the-snds" title="Permalink to this headline">#</a></h1>
+<p>Source data : random sample of 949 591 809 events for 3 026 139 patients on 10 years.</p>
+<p>Building the co-occurrence matrix took <code class="docutils literal notranslate"><span class="pre">42min25s</span></code> with a vocabulary size of 5389
+distinct events.</p>
+<p>Sadly, I lost the embeddings either on Drees gitlab, either on an old laptop.</p>
+</section>
+<section id="experiment-on-aphp">
+<h1>Experiment on APHP<a class="headerlink" href="#experiment-on-aphp" title="Permalink to this headline">#</a></h1>
+<section id="the-ckf5-cohort">
+<h2>The CKF5 cohort<a class="headerlink" href="#the-ckf5-cohort" title="Permalink to this headline">#</a></h2>
+<p>Work with vocabulary of size 6532 seems and 1 million data points, 5 min for the
+coocurrence matrix. The SVD takes a lot if time : 12min.</p>
+</section>
+<section id="omop-samples">
+<h2>Omop samples<a class="headerlink" href="#omop-samples" title="Permalink to this headline">#</a></h2>
+<section id="only-with-cim10">
+<h3>Only with cim10<a class="headerlink" href="#only-with-cim10" title="Permalink to this headline">#</a></h3>
+<p>After a bit of workaround to avoid the bottleneck of the spark driver, it works with vocabulary of size 11157 and 1 million data points, 5 min for the
+coocurrence matrix. The SVD takes a lot if time : 12min.</p>
+</section>
+<section id="cim10-labs-drugs-procedures">
+<h3>cim10, labs, drugs, procedures<a class="headerlink" href="#cim10-labs-drugs-procedures" title="Permalink to this headline">#</a></h3>
+<p>For 15 M events and 10583 distinct codes, a lot of time to build the co-occurrence (1h) but it works. The sparse SVD is
+really quick : 1min.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">2023</span>-01-14<span class="w"> </span><span class="m">15</span>:52:53.454<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:build_cooccurrence_matrix:79<span class="w"> </span>-<span class="w"> </span>Fit<span class="w"> </span>count<span class="w"> </span>vectorizer<span class="w"> </span>model
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:16:11.069<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:build_cooccurrence_matrix:83<span class="w"> </span>-<span class="w"> </span>Vocabulary<span class="w"> </span>of<span class="w"> </span>length<span class="w"> </span><span class="m">10583</span>
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:16:11.071<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:build_cooccurrence_matrix:86<span class="w"> </span>-<span class="w"> </span>Transform<span class="w"> </span>events<span class="w"> </span>with<span class="w"> </span>count<span class="w"> </span>vectorizer<span class="w"> </span>model
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:43:33.328<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:build_cooccurrence_matrix:140<span class="w"> </span>-<span class="w"> </span>Saving<span class="w"> </span>cooccurrence<span class="w"> </span>matrix<span class="w"> </span>as<span class="w"> </span>parquet<span class="w"> </span>at:<span class="w"> </span>file:///export/home/cse210038/Matthieu/event2vec/event2vec/../data/results/omop_sample_4tables/spark_matrix.parquet
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:47:44.763<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:build_cooccurrence_matrix:161<span class="w"> </span>-<span class="w"> </span>Saving<span class="w"> </span>coocurrence_matrix,<span class="w"> </span>event_count<span class="w"> </span>and<span class="w"> </span>vocabulary<span class="w"> </span>at<span class="w"> </span>/export/home/cse210038/Matthieu/event2vec/event2vec/../data/results/omop_sample_4tables
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:47:46.069<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:event2vec:302<span class="w"> </span>-<span class="w"> </span>Shape<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>co-occurrence<span class="w"> </span>matrix:<span class="w"> </span><span class="o">(</span><span class="m">10583</span>,<span class="w"> </span><span class="m">10583</span><span class="o">)</span>
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:47:46.070<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:event2vec:305<span class="w"> </span>-<span class="w"> </span>Build<span class="w"> </span>PPMI<span class="w"> </span>with<span class="w"> </span>smoothing<span class="w"> </span>factor<span class="w"> </span><span class="m">0</span>.75<span class="w"> </span>and<span class="w"> </span><span class="nb">shift</span><span class="w"> </span><span class="m">1</span>
+/export/home/cse210038/Matthieu/event2vec/event2vec/pmiMatrix.py:213:<span class="w"> </span>RuntimeWarning:<span class="w"> </span>divide<span class="w"> </span>by<span class="w"> </span>zero<span class="w"> </span>encountered<span class="w"> </span><span class="k">in</span><span class="w"> </span>log
+<span class="w">  </span>cooccurrence_ratio<span class="w"> </span>*<span class="w"> </span>np.outer<span class="o">(</span>inverse_item_ratio,<span class="w"> </span>inverse_item_ratio<span class="o">)</span>
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:47:48.294<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:event2vec:313<span class="w"> </span>-<span class="w"> </span>PPMI<span class="w"> </span>factorization<span class="w"> </span>with<span class="w"> </span>SVD
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:48:41.109<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:event2vec:319<span class="w"> </span>-<span class="w"> </span>Embeddings<span class="w"> </span>of<span class="w"> </span>dimension<span class="w"> </span><span class="m">100</span><span class="w"> </span>created<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>co-occurrence<span class="w"> </span>matrix<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>:00:55.040447
+<span class="m">2023</span>-01-14<span class="w"> </span><span class="m">16</span>:48:41.111<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w">     </span><span class="p">|</span><span class="w"> </span>event2vec.pmiMatrix:event2vec:326<span class="w"> </span>-<span class="w"> </span>Saving<span class="w"> </span>embeddings<span class="w"> </span>dictionnary<span class="w"> </span>at<span class="w"> </span>/export/home/cse210038/Matthieu/event2vec/event2vec/../data/results/omop_sample_4tables/tuto_snds2vec_alpha<span class="o">=</span><span class="m">0</span>.75_k<span class="o">=</span><span class="nv">1_d</span><span class="o">=</span><span class="m">100</span>.json
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="usage.html" title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">Usage</p>
+      </div>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Exploration of the data for embedding transportability experiences
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     2023-07-14
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     2023-07-13
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sessionization-of-the-visits">
+       Sessionization of the visits
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2023-06-19
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     2023-06-15
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     2023-06-14
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     2023-06-12
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     2023-06-08
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2023-04-10
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     2023-04-08
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     2023-04-06
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     2023-04-05
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     2023-04-04
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     2023-04-03
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exploration-of-number-of-patients-with-at-least-two-hospitalizations">
+       Exploration of number of patients with at least two hospitalizations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#detail-of-the-behrt-task">
+       Detail of the Behrt task:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     2023-03-29
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     2023-03-28
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     2023-03-23
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     2023-03-10
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     2023-03-08
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id19">
+     2023-03-07
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#new-experience-with-sample-weights-balanced-demographics-and-svd-added-for-snds-embeddings-and-count-event">
+       New experience with sample_weights=balanced, demographics and SVD added for SNDS embeddings and Count Event
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id20">
+     2023-03-05
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id21">
+     2023-03-03
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id22">
+     2023-03-02
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id23">
+     2023-03-01
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id24">
+     2023-02-24
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id25">
+     2023-02-23
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-the-link-between-visit-occurrence-and-visit-details">
+       What is the link between visit_occurrence and visit_details
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#description-of-the-data">
+         Description of the data:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id26">
+     2023-01-26
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-to-isolate-hospitalization">
+       How to isolate hospitalization ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-the-repartition-of-selected-hospitalization-in-the-hospitals">
+       What is the repartition of selected hospitalization in the hospitals ?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cohort-creation">
+       Cohort creation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-the-target">
+       Add the target
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-the-cohort">
+       Create the cohort
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id27">
+   2022-01-01
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#old-experiments-on-the-snds">
+   Old experiments on the SNDS
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#experiment-on-aphp">
+   Experiment on APHP
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-ckf5-cohort">
+     The CKF5 cohort
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#omop-samples">
+     Omop samples
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#only-with-cim10">
+       Only with cim10
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cim10-labs-drugs-procedures">
+       cim10, labs, drugs, procedures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="_sources/exploration.md.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
