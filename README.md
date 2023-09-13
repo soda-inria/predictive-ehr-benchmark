@@ -1,13 +1,12 @@
 # Predictive algorithms from Electronic Health Records 
 
-**Documentation**: [https://soda.gitlabpages.inria.fr/medical_embeddings_transfer](https://soda.gitlabpages.inria.fr/medical_embeddings_transfer)
-
-**Source Code**: [https://gitlab.inria.fr/soda/medical_embeddings_transfer](https://gitlab.inria.fr/soda/medical_embeddings_transfer)
-
-**Paper repository**: [https://github.com/strayMat/predictive_ehr_paper](https://github.com/strayMat/predictive_ehr_paper)
-
-
 This repository hosts code for the working paper: *Exploring a complexity gradient in representation and predictive algorithms for EHRs* 
+
+[**Documentation**](https://soda.gitlabpages.inria.fr/medical_embeddings_transfer)
+
+[**Source Code**](https://gitlab.inria.fr/soda/medical_embeddings_transfer)
+
+[**Working Paper repository**](https://github.com/strayMat/predictive_ehr_paper)
 
 ### Abstract
 
