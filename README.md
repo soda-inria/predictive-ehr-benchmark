@@ -1,4 +1,4 @@
-# medical_embedding_transfer
+# Predictive algorithms from Electronic Health Records -- exploring a complexity gradient
 
 **Documentation**: [https://soda.gitlabpages.inria.fr/medical_embeddings_transfer](https://soda.gitlabpages.inria.fr/medical_embeddings_transfer)
 
