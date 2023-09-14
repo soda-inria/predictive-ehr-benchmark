@@ -82,7 +82,7 @@ html_theme_options = {
         },
         {
             "name": "Github",
-            "url": "https://gitlab.inria.fr/soda/medical_embeddings_transfer",
+            "url": "https://github.com/soda-inria/predictive-ehr-benchmark",
             "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
         },

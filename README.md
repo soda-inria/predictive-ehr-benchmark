@@ -2,9 +2,9 @@
 
 This repository hosts code for the working paper: *Exploring a complexity gradient in representation and predictive algorithms for EHRs* 
 
-[**Documentation**](https://soda.gitlabpages.inria.fr/medical_embeddings_transfer)
+[**Documentation**](https://soda-inria.github.io/predictive-ehr-benchmark/)
 
-[**Source Code**](https://gitlab.inria.fr/soda/medical_embeddings_transfer)
+[**Source Code**](https://github.com/soda-inria/predictive-ehr-benchmark)
 
 [**Working Paper repository**](https://github.com/strayMat/predictive_ehr_paper)
 
@@ -30,4 +30,4 @@ efficiency.
 
 # Usage
 
-See the [usage page on the documentation](https://soda.gitlabpages.inria.fr/medical_embeddings_transfer/usage.html)
+See the [usage page on the documentation](https://soda-inria.github.io/predictive-ehr-benchmark//usage.html)

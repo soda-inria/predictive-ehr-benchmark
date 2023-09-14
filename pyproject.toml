@@ -5,8 +5,8 @@ description = "Medical_Embedding_Transfer"
 authors = ["Matthieu Doutreligne <matt.dout@gmail.com>"]
 license = "EUPL-v1.2"
 readme = "README.md"
-repository = "https://gitlab.inria.fr/soda/medical_embeddings_transfer"
-homepage = "https://gitlab.inria.fr/soda/medical_embeddings_transfer"
+repository = "https://github.com/soda-inria/predictive-ehr-benchmark"
+homepage = "https://github.com/soda-inria/predictive-ehr-benchmark"
 include = ["bin"]
 keywords = []
 classifiers = [
@@ -22,7 +22,7 @@ classifiers = [
 ]
 
 # [tool.poetry.urls]
-# Changelog = "https://gitlab.inria.fr/soda/medical_embeddings_transfer/releases"
+
 
 [tool.poetry.dependencies]
 python = ">=3.8, <3.11"
